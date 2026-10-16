@@ -1,0 +1,185 @@
+/* Basic Reset */
+* {
+  margin: 0; /*elements ke bahar ka default space hataata hai*/
+  padding: 0; /*elements ke andar ka default space hataata hai.*/
+  box-sizing: border-box; /*width aur height calculate karna easy banata hai; padding aur border usi size ke andar count hote hain.*/
+}
+
+body {
+  background: #f5efe6;
+  display: flex; /*children inside it align horizontaly*/
+  justify-content: center; /*align child div horizontaly*/
+  align-items: center; /*align child div vertically*/
+  min-height: 100vh; /*body ko screen jitni height deta hai nahi denge to content jitni rhegi */
+  padding: 1rem;
+  font-family: sans-serif;
+}
+
+.container {
+  background-color: white;
+  border-radius: 1rem; /*rem ek CSS unit hai jo root element (html) ke font size ke according calculate hoti hai.*/
+  box-shadow: 0px 10px 30px rgb(172, 141, 91); /*0 → left-right movement (X) (+)value for right (-) for left
+  10px → up-down movement (Y) (+) for down (-) for up
+  30px → blur kitna hoga
+  5px → shadow kitni badi ya chhoti hogi (Spread)*/
+  width: 100%; /*Element available parent width ki 100% width lene ki koshish karega.*/
+  max-width: 600px; /*Element ki width 600px se zyada nahi hogi, chahe screen badi ho.*/
+  overflow: hidden; /*Element ke bahar nikalne wala content chhupa deta hai.*/
+  position: relative; /*Element apni normal position par rehta hai, lekin tum top, left jaise properties se use move kar sakte ho.*/
+}
+
+/*Screen*/
+
+.screen {
+  display: none; /*Iska matlab hai element ko page se hide kar do*/
+  text-align: center;
+  padding: 2rem;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* start Screen  */
+
+#start-screen h1 {
+  color: rgb(255, 125, 74);
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+#start-screen p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.quiz-header {
+  margin-bottom: 2rem;
+}
+
+#question-text {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.quiz-info {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.answers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.answer-btn {
+  background-color: #f8f0e5;
+  color: #333;
+  border: 2px solid #eadbc8;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.answer-btn:hover {
+  background-color: #f8f0e8;
+  border: #dac0ae;
+}
+
+.answer-btn.correct {
+  background-color: #e6fff0;
+  border: #a3f0c4;
+  color: #28a745;
+}
+
+.answer-btn.incorrect {
+  background-color: #fff0f0;
+  border: #ffbdbd;
+  color: rgb(202, 46, 46);
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #f8f0e5;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.progress {
+  height: 100%;
+  background-color: rgb(255, 125, 74);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Result Screen  */
+
+#result-screen h1 {
+  color: rgb(255, 125, 74);
+  margin-bottom: 30px;
+}
+
+.result-info {
+  background-color: #f8f0e5;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.result-info p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+#result-msg {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(255, 125, 74);
+}
+
+button {
+  background-color: rgb(255, 125, 74);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  transition: box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(254, 98, 36);
+  box-shadow: 0px 0px 10px 5px rgb(254, 224, 190);
+}
+
+@media(max-width : 500px){
+  .screen{
+    padding: 1rem;
+  }
+  #start-screen h1{
+    font-size: 2rem;
+  }
+  #question-text{
+    font-size: 1.3rem;
+  }
+  .answer-btn{
+    padding: 12px;
+  }
+  button{
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
